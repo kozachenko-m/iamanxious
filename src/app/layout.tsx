@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
 import { ServiceLogo } from "@/components/service-logo";
 import "./globals.css";
+import { ConvexClientProvider } from "@/components/providers/convex-client";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -40,7 +41,9 @@ export default function RootLayout({
               <div className="flex-1"></div>
             </nav>
             <div className="z-20 px-5 md:px-10 max-w-screen-2xl mx-auto">
-              {children}
+              <ConvexClientProvider>
+                {children}
+              </ConvexClientProvider>
             </div>
           </div>
           <footer className="z-20 w-full mt-10 text-white/80 rounded-t-2xl bottom-0 bg-white/10 backdrop-blur-xl border border-white/20 border-b-0 drop-shadow-2xl shadow-2xl p-5 flex flex-col gap-10">
