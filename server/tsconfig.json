@@ -1,6 +1,0 @@
-{
-    "exclude": [
-        "/workspaces/iamanxious/tailwind.config.js"
-    ],
-    "extends": "../.nuxt/tsconfig.server.json"
-}

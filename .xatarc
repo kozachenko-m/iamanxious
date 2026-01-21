@@ -1,6 +1,0 @@
-{
-  "databaseURL": "https://My-personal-workspace-9s4vdm.eu-west-1.xata.sh/db/iamanxious",
-  "codegen": {
-    "output": "server/db/xata.ts"
-  }
-}
