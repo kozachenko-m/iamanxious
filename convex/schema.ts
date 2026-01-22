@@ -6,5 +6,5 @@ export default defineSchema({
     worry_text: v.string(),
     createdAt: v.number(),
     updatedAt: v.number(),
-  }),
+  }).index("by_created_at", ["createdAt"]),
 });

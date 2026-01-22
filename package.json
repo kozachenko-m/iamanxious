@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev:convex": "bunx convex dev",
+    "dev:web": "next dev --turbopack",
+    "dev": "bunx concurrently -k -s first -n convex,web -c \"cyan.bold,magenta.bold\" \"bun dev:convex\" \"bun dev:web\"",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"
