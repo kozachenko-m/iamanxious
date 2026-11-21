@@ -13,7 +13,7 @@
     "dev": "bunx concurrently -k -s first -n convex,web -c \"cyan.bold,magenta.bold\" \"bun dev:convex\" \"bun dev:web\"",
     "build": "next typegen && $npm_execpath check && next build",
     "start": "next start",
-    "typecheck": "next typegen && bun check"
+    "typecheck": "next typegen && $npm_execpath check"
   },
   "dependencies": {
     "convex": "^1.51.0",

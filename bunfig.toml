@@ -26,12 +26,12 @@ ignorePatterns = ["convex/_generated/"]
 # Linter: `bun lint` (native, Bun >= 1.4.6). Docs: https://bun.com/docs/lint
 # Bun's default rules stay on (ESLint, typescript-eslint and React hooks
 # recommended rules). The rules below are the ones that eslint-config-next 16.4.6
-# (core-web-vitals + typescript) turned on, with the same severity.
+# (core-web-vitals + typescript) turned on, with the same severity and explicit options where defaults differ.
 # Not built in, so not listed: @next/next/no-location-assign-relative-destination.
 [lint.rules]
 # react
 "react/display-name" = "error"
-"react/jsx-key" = "error"
+"react/jsx-key" = ["error", { checkArraysOutsideJSX = true }]
 "react/jsx-no-comment-textnodes" = "error"
 "react/jsx-no-duplicate-props" = "error"
 "react/jsx-no-undef" = "error"
@@ -108,15 +108,22 @@ ignorePatterns = ["convex/_generated/"]
 "@typescript-eslint/no-explicit-any" = "error"
 "@typescript-eslint/no-extra-non-null-assertion" = "error"
 "@typescript-eslint/no-misused-new" = "error"
-"@typescript-eslint/no-namespace" = "error"
+"@typescript-eslint/no-namespace" = ["error", { allowDeclarations = false }]
 "@typescript-eslint/no-non-null-asserted-optional-chain" = "error"
 "@typescript-eslint/no-require-imports" = "error"
 "@typescript-eslint/no-this-alias" = "error"
 "@typescript-eslint/no-unnecessary-type-constraint" = "error"
 "@typescript-eslint/no-unsafe-declaration-merging" = "error"
 "@typescript-eslint/no-unsafe-function-type" = "error"
-"@typescript-eslint/no-unused-expressions" = "warn"
-"@typescript-eslint/no-unused-vars" = "warn"
+"@typescript-eslint/no-unused-expressions" = [
+  "warn",
+  { allowShortCircuit = false, allowTernary = false, allowTaggedTemplates = false },
+]
+# ESLint has no ignore patterns. ^$ matches no identifier, overriding Bun's ^_.
+"@typescript-eslint/no-unused-vars" = [
+  "warn",
+  { varsIgnorePattern = "^$", argsIgnorePattern = "^$", caughtErrorsIgnorePattern = "^$", destructuredArrayIgnorePattern = "^$", ignoreRestSiblings = false },
+]
 "@typescript-eslint/no-wrapper-object-types" = "error"
 "@typescript-eslint/prefer-as-const" = "error"
 "@typescript-eslint/prefer-namespace-keyword" = "error"
