@@ -1,0 +1,5 @@
+[install]
+# Supply-chain guard: only install package versions that were published
+# at least 36 hours ago. The value is in seconds (36 * 60 * 60 = 129600).
+# Docs: https://bun.com/docs/runtime/bunfig#install-minimumreleaseage
+minimumReleaseAge = 129600
