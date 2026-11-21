@@ -2,5 +2,5 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "nextjs",
   "installCommand": "bunx bun@1.4.5 install",
-  "buildCommand": "bunx bun@1.4.5 run build"
+  "buildCommand": "bunx bun@1.4.5 x convex deploy --cmd 'bunx bun@1.4.5 run build'"
 }
