@@ -38,6 +38,17 @@ bun run lint        # eslint
 bun run build       # next build
 ```
 
+### TypeScript 7 + TypeScript 6 API
+
+`package.json` installs TypeScript side by side, as recommended in the
+[TypeScript 7.0 announcement](https://devblogs.microsoft.com/typescript/announcing-typescript-7-0/#running-side-by-side-with-typescript-6.0):
+
+- `"@typescript/native": "npm:typescript@^7.0.2"`: the `tsc` binary is TypeScript 7.
+- `"typescript": "npm:@typescript/typescript6@^6.0.2"`: the TypeScript 6 JS API
+  (and a `tsc6` binary) for tools that import `typescript`, such as typescript-eslint.
+
+TypeScript 7.0 has no JS compiler API. Remove the alias when typescript-eslint supports TypeScript 7.
+
 ## Learn More
 
 - [Next.js Documentation](https://nextjs.org/docs)
