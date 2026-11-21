@@ -3,3 +3,121 @@
 # at least 36 hours ago. The value is in seconds (36 * 60 * 60 = 129600).
 # Docs: https://bun.com/docs/runtime/bunfig#install-minimumreleaseage
 minimumReleaseAge = 129600
+
+# Formatter: `bun fmt` (Prettier-compatible). Docs: https://bun.com/docs/format
+# These are the options of the former .prettierrc.
+[fmt]
+semi = false
+singleQuote = true
+trailingComma = "all"
+arrowParens = "always"
+printWidth = 80
+tabWidth = 2
+useTabs = false
+bracketSpacing = true
+bracketSameLine = false
+jsxSingleQuote = false
+quoteProps = "as-needed"
+endOfLine = "lf"
+# `convex dev` / `convex codegen` regenerates these files with its own
+# Prettier defaults. Formatting them would only cause churn.
+ignorePatterns = ["convex/_generated/"]
+
+# Linter: `bun lint` (native, Bun >= 1.4.6). Docs: https://bun.com/docs/lint
+# Bun's default rules stay on (ESLint, typescript-eslint and React hooks
+# recommended rules). The rules below are the ones that eslint-config-next 16.4.6
+# (core-web-vitals + typescript) turned on, with the same severity.
+# Not built in, so not listed: @next/next/no-location-assign-relative-destination.
+[lint.rules]
+# react
+"react/display-name" = "error"
+"react/jsx-key" = "error"
+"react/jsx-no-comment-textnodes" = "error"
+"react/jsx-no-duplicate-props" = "error"
+"react/jsx-no-undef" = "error"
+"react/jsx-uses-react" = "error"
+"react/jsx-uses-vars" = "error"
+"react/no-children-prop" = "error"
+"react/no-danger-with-children" = "error"
+"react/no-deprecated" = "error"
+"react/no-direct-mutation-state" = "error"
+"react/no-find-dom-node" = "error"
+"react/no-is-mounted" = "error"
+"react/no-render-return-value" = "error"
+"react/no-string-refs" = "error"
+"react/no-unescaped-entities" = "error"
+"react/require-render-return" = "error"
+# react-hooks
+"react-hooks/rules-of-hooks" = "error"
+"react-hooks/exhaustive-deps" = "warn"
+"react-hooks/static-components" = "error"
+"react-hooks/use-memo" = "error"
+"react-hooks/preserve-manual-memoization" = "error"
+"react-hooks/incompatible-library" = "warn"
+"react-hooks/immutability" = "error"
+"react-hooks/globals" = "error"
+"react-hooks/refs" = "error"
+"react-hooks/set-state-in-effect" = "error"
+"react-hooks/error-boundaries" = "error"
+"react-hooks/purity" = "error"
+"react-hooks/set-state-in-render" = "error"
+"react-hooks/unsupported-syntax" = "warn"
+"react-hooks/config" = "error"
+"react-hooks/gating" = "error"
+# next
+"@next/next/google-font-display" = "warn"
+"@next/next/google-font-preconnect" = "warn"
+"@next/next/next-script-for-ga" = "warn"
+"@next/next/no-async-client-component" = "warn"
+"@next/next/no-before-interactive-script-outside-document" = "warn"
+"@next/next/no-css-tags" = "warn"
+"@next/next/no-head-element" = "warn"
+"@next/next/no-html-link-for-pages" = "error"
+"@next/next/no-img-element" = "warn"
+"@next/next/no-page-custom-font" = "warn"
+"@next/next/no-styled-jsx-in-document" = "warn"
+"@next/next/no-sync-scripts" = "error"
+"@next/next/no-title-in-document-head" = "warn"
+"@next/next/no-typos" = "warn"
+"@next/next/no-unwanted-polyfillio" = "warn"
+"@next/next/inline-script-id" = "error"
+"@next/next/no-assign-module-variable" = "error"
+"@next/next/no-document-import-in-page" = "error"
+"@next/next/no-duplicate-head" = "error"
+"@next/next/no-head-import-in-document" = "error"
+"@next/next/no-script-component-in-head" = "error"
+# import
+"import/no-anonymous-default-export" = "warn"
+# jsx-a11y
+"jsx-a11y/alt-text" = ["warn", { elements = ["img"], img = ["Image"] }]
+"jsx-a11y/aria-props" = "warn"
+"jsx-a11y/aria-proptypes" = "warn"
+"jsx-a11y/aria-unsupported-elements" = "warn"
+"jsx-a11y/role-has-required-aria-props" = "warn"
+"jsx-a11y/role-supports-aria-props" = "warn"
+# core
+"no-var" = "error"
+"prefer-const" = "error"
+"prefer-rest-params" = "error"
+"prefer-spread" = "error"
+# typescript
+"@typescript-eslint/ban-ts-comment" = "error"
+"@typescript-eslint/no-array-constructor" = "error"
+"@typescript-eslint/no-duplicate-enum-values" = "error"
+"@typescript-eslint/no-empty-object-type" = "error"
+"@typescript-eslint/no-explicit-any" = "error"
+"@typescript-eslint/no-extra-non-null-assertion" = "error"
+"@typescript-eslint/no-misused-new" = "error"
+"@typescript-eslint/no-namespace" = "error"
+"@typescript-eslint/no-non-null-asserted-optional-chain" = "error"
+"@typescript-eslint/no-require-imports" = "error"
+"@typescript-eslint/no-this-alias" = "error"
+"@typescript-eslint/no-unnecessary-type-constraint" = "error"
+"@typescript-eslint/no-unsafe-declaration-merging" = "error"
+"@typescript-eslint/no-unsafe-function-type" = "error"
+"@typescript-eslint/no-unused-expressions" = "warn"
+"@typescript-eslint/no-unused-vars" = "warn"
+"@typescript-eslint/no-wrapper-object-types" = "error"
+"@typescript-eslint/prefer-as-const" = "error"
+"@typescript-eslint/prefer-namespace-keyword" = "error"
+"@typescript-eslint/triple-slash-reference" = "error"
