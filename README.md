@@ -84,4 +84,4 @@ new Bun matches a newer TypeScript.
 
 The site deploys on [Vercel](https://vercel.com). Vercel detects Bun from `bun.lock`.
 
-#redeploy
+#redeploy 1
